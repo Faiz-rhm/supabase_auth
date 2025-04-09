@@ -1,3 +1,4 @@
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -10,6 +11,7 @@ abstract class SuperBaseSignInRepo {
   Future<void> signOut();
   Future<User?> checkUserSession();
   Future<void> deleteUser();
+  Future<void> googleSignIn();
 }
 
 final superbaseSignInRepoProvider = Provider<SuperBaseSignInRepo>((ref) {
@@ -47,6 +49,38 @@ class SuperBaseSignInRepoImpl implements SuperBaseSignInRepo {
 
     if (response.user != null) {
     }
+  }
+
+  @override
+  Future<void> googleSignIn() async {
+    ///
+    /// Web Client ID that you registered with Google Cloud.
+    const webClientId = 'client-id';
+    ///
+    /// iOS Client ID that you registered with Google Cloud.
+    // const iosClientId = 'my-ios.apps.googleusercontent.com';
+    final GoogleSignIn googleSignIn = GoogleSignIn(
+      // clientId: iosClientId,
+      serverClientId: webClientId,
+      scopes: ['email'],
+    );
+    final googleUser = await googleSignIn.signIn();
+    final googleAuth = await googleUser!.authentication;
+    final accessToken = googleAuth.accessToken;
+    final idToken = googleAuth.idToken;
+
+    if (accessToken == null) {
+      throw 'No Access Token found.';
+    }
+    if (idToken == null) {
+      throw 'No ID Token found.';
+    }
+
+    await _supabase.auth.signInWithIdToken(
+      provider: OAuthProvider.google,
+      idToken: idToken,
+      accessToken: accessToken,
+    );
   }
 
   @override
