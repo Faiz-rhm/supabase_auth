@@ -13,9 +13,10 @@ dependencies:
   go_router: ^14.8.1
   flutter_riverpod: ^2.6.1
   supabase_flutter: ^2.8.4
-  sentry_flutter: ^8.14.1
-  shared_preferences: ^2.5.3
   zoom_tap_animation: ^1.1.0
+  flutter_svg: ^2.0.9
+  google_sign_in: ^6.3.0
+  flutter_web_auth: ^0.6.0
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +30,8 @@ flutter:
   generate: true
   assets:
     - assets/images/
+    - assets/svg/
+
   fonts:
     - family: Manrope
       fonts:

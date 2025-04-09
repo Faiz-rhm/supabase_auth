@@ -46,4 +46,16 @@ class LoginController extends StateNotifier<AsyncValue<void>> {
     }
   }
 
+  Future<void> signInWithGoogle() async {
+    state = const AsyncLoading();
+    try {
+      await ref.read(superbaseSignInRepoProvider).googleSignIn();
+      await profile.init();
+      state = const AsyncData(null);
+    } on AuthException catch (e, st) {
+      print(e.message);
+      state = AsyncError(e.message, st);
+    }
+  }
+
 }
