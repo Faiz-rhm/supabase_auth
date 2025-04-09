@@ -39,22 +39,22 @@ class HomeScreen extends ConsumerWidget {
 
             Spacer(),
 
-            CustomButton.primary(
-              onPressed: () => showDeleteAccountDialog(context, () async {
-                await ref.read(profileController.notifier).deleteUser();
-              }),
-              child: Text(
-                'Delete My Account',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: AppColors.black,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: AppFonts.radioCanadaBig,
-                ), textAlign: TextAlign.center,
-              ),
-            ),
+            // CustomButton.primary(
+            //   onPressed: () => showDeleteAccountDialog(context, () async {
+            //     await ref.read(profileController.notifier).deleteUser();
+            //   }),
+            //   child: Text(
+            //     'Delete My Account',
+            //     style: TextStyle(
+            //       fontSize: 18,
+            //       color: AppColors.black,
+            //       fontWeight: FontWeight.bold,
+            //       fontFamily: AppFonts.radioCanadaBig,
+            //     ), textAlign: TextAlign.center,
+            //   ),
+            // ),
 
-            gapH16,
+            // gapH16,
 
             CustomButton.secondary(
               onPressed: () => ref.read(profileController.notifier).signOut(),
