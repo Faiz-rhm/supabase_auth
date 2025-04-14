@@ -1,16 +1,26 @@
-# superbase_auth
+🚀 Flutter Auth App
+A simple Flutter app for user registration and login using:
 
-A new Flutter project.
+🔐 Supabase for authentication
 
-## Getting Started
+🧠 Riverpod for state management
 
-This project is a starting point for a Flutter application.
+🧭 GoRouter for navigation
 
-A few resources to get you started if this is your first Flutter project:
+🧼 Clean Architecture for scalability and clarity
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+📸 Preview
+![Uploading Screenshot 1404-01-25 at 14.03.17.png…]()
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+🔧 Getting Started
+bash
+Copy
+Edit
+git clone https://github.com/your-username/flutter-auth-app.git
+cd flutter-auth-app
+flutter pub get
+flutter run
+Update your Supabase credentials in a .env or securely in the app.
+
+Let me know if you'd like a version in Markdown with the image embedded or a README file to download.
