@@ -91,32 +91,32 @@ class LoginScreen extends ConsumerWidget {
               ),
             ),
 
-            gapH20,
+            // gapH20,
 
-            CustomButton.secondary(
-              onPressed: () => ref.read(loginController.notifier).signInWithGoogle(),
-              child: otpLogin.maybeWhen(
-                loading: () => const CircularProgressIndicator(),
-                orElse: () => Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(AppAssets.google),
+            // CustomButton.secondary(
+            //   onPressed: () => ref.read(loginController.notifier).signInWithGoogle(),
+            //   child: otpLogin.maybeWhen(
+            //     loading: () => const CircularProgressIndicator(),
+            //     orElse: () => Row(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //         SvgPicture.asset(AppAssets.google),
 
-                    gapW8,
+            //         gapW8,
 
-                    Text(
-                      'Login with Google',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: AppFonts.radioCanadaBig,
-                      ), textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            //         Text(
+            //           'Login with Google',
+            //           style: TextStyle(
+            //             fontSize: 18,
+            //             color: AppColors.black,
+            //             fontWeight: FontWeight.bold,
+            //             fontFamily: AppFonts.radioCanadaBig,
+            //           ), textAlign: TextAlign.center,
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
