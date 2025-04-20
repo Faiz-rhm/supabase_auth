@@ -14,14 +14,5 @@ A simple Flutter app for user registration and login using:
 
 
 
-🔧 Getting Started
-bash
-Copy
-Edit
-git clone https://github.com/your-username/flutter-auth-app.git
-cd flutter-auth-app
-flutter pub get
-flutter run
-Update your Supabase credentials in a .env or securely in the app.
 
 Let me know if you'd like a version in Markdown with the image embedded or a README file to download.
